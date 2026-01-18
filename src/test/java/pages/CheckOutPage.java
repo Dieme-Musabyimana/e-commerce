@@ -1,4 +1,6 @@
-package pages.base;
+package pages;
 
-public class CheckOutPage {
+import pages.base.BasePage;
+
+public class CheckOutPage  {
 }
