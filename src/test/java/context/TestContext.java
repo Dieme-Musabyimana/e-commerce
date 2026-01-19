@@ -1,15 +1,17 @@
 package context;
 
 import org.openqa.selenium.WebDriver;
-import pages.AccountPage;
-import pages.CartPage;
+import pages.account.*;
 
 public class TestContext {
     public WebDriver driver;
 
     // 2. The Pages (Initialized lazily)
     private AccountPage accountPage;
+    private StorePage storePage;
     private CartPage cartPage;
+    private ProductPage productPage;
+    private HomePage homePage;
 
     public AccountPage getAccountPage() {
         if (accountPage == null) {
@@ -18,10 +20,31 @@ public class TestContext {
         return accountPage;
     }
 
+    public StorePage getStorePage() {
+        if (storePage == null) {
+            storePage = new StorePage(driver);
+        }
+        return storePage;
+    }
+
     public CartPage getCartPage() {
         if (cartPage == null) {
             cartPage = new CartPage(driver);
         }
         return cartPage;
     }
+
+    public ProductPage getProductPage(){
+        if(productPage == null){
+            productPage = new ProductPage(driver);
+        }
+        return productPage;
+    }
+    public HomePage getHomePage(){
+        if(homePage == null){
+            homePage = new HomePage(driver);
+        }
+        return homePage;
+    }
+
 }

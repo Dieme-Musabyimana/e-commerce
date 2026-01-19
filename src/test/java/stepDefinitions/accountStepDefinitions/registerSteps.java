@@ -3,7 +3,7 @@ package stepDefinitions.accountStepDefinitions;
 import context.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import pages.AccountPage;
+import pages.account.AccountPage;
 
 
 public class registerSteps {
