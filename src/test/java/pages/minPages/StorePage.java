@@ -1,12 +1,9 @@
-package pages.account;
+package pages.minPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.IExpectedExceptionsHolder;
 import pages.base.BasePage;
 
 public class StorePage extends BasePage {
@@ -17,7 +14,7 @@ public class StorePage extends BasePage {
         driver.get(url);
     }
     public void addProductToCart(String productName){
-        String selector = "a[aria-label='Add “" + productName + "” to your cart']";
+        String selector = "a[aria-label*='" + productName + "']";
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(selector))).click();
     }
 

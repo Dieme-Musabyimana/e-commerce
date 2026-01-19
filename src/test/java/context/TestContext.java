@@ -1,7 +1,7 @@
 package context;
 
 import org.openqa.selenium.WebDriver;
-import pages.account.*;
+import pages.minPages.*;
 
 public class TestContext {
     public WebDriver driver;
@@ -12,6 +12,7 @@ public class TestContext {
     private CartPage cartPage;
     private ProductPage productPage;
     private HomePage homePage;
+    private CheckOutPage checkOutPage;
 
     public AccountPage getAccountPage() {
         if (accountPage == null) {
@@ -45,6 +46,12 @@ public class TestContext {
             homePage = new HomePage(driver);
         }
         return homePage;
+    }
+    public CheckOutPage getCheckOutPage(){
+        if(checkOutPage == null){
+            homePage = new HomePage(driver);
+        }
+        return checkOutPage;
     }
 
 }

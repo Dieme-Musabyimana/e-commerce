@@ -2,7 +2,7 @@ Feature: Add products to cart as a Logged-in User
 
   Background:
     Given I am a logged-in user with credentials "didy" and "didy1"
-  @storepage
+  @cartManagement
   Scenario Outline: Add a product from Store page to cart as a logged-in user
     Given I am on the store page
     When I add the product "<product_name>" from store page to  the cart
@@ -13,7 +13,7 @@ Feature: Add products to cart as a Logged-in User
       | Blue Shoes       |
       | Anchor Bracelet  |
 
-  @productpage
+  @cartManagement
   Scenario Outline: Add a product from Product page to cart as a logged-in user
     Given I am on the Product page for "<product_name>"
     When I add the product "<product_name>" from the product page to the cart

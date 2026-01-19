@@ -1,4 +1,4 @@
-package pages.account;
+package pages.minPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

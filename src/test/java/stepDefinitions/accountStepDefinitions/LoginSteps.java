@@ -2,7 +2,7 @@ package stepDefinitions.accountStepDefinitions;
 
 import context.TestContext;
 import io.cucumber.java.en.When;
-import pages.account.AccountPage;
+import pages.minPages.AccountPage;
 
 public class LoginSteps {
     AccountPage accountPage;

@@ -9,9 +9,10 @@ public class AddToCartAsLoggedInUser {
     this.context = context;
     }
     @Given("I am a logged-in user with credentials {string} and {string}")
-    public void dddd(String username , String passcode) {
+    public void enterCrdentials (String username , String passcode) {
         context.getAccountPage().load("https://askomdch.com/account/");
   context.getAccountPage().enterLoginCredentials(username , passcode);
+  context.getAccountPage().clickLoginButton();
 
     }
 
