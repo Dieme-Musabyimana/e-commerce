@@ -21,17 +21,17 @@ public class CartPage extends BasePage {
         return Integer.parseInt( quantityFld.getAttribute("value"));
     }
 public void removeProductFromCart(){
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(" a[aria-label='Remove this item']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[aria-label='Remove this item']"))).click();
 
 }
 public String getProductRemovalSuccessAlert(String productName){
     wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//a[normalize-space()='" + productName + "']")));
-
     return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".woocommerce-message"))).getText();
 }
 public int getProductQuantityAfterRemove(){
-
-    String quantity = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.count"))).getText();
+    By cartCountSelector = By.cssSelector("span.count");
+    wait.until(ExpectedConditions.textToBe(cartCountSelector, "0"));
+    String quantity = wait.until(ExpectedConditions.visibilityOfElementLocated(cartCountSelector)).getText();
     return Integer.parseInt(quantity.trim());
 }
 

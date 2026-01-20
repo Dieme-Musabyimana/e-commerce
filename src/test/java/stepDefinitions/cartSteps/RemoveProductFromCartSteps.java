@@ -11,28 +11,32 @@ public class RemoveProductFromCartSteps {
     public RemoveProductFromCartSteps(TestContext context){
         this.context = context;
     }
+
+
+
     @Given("I have product {string} in the cart")
-    public void i_have_product_in_the_cart(String product) {
-      context.getStorePage().addProductToCart(product);
-      context.getStorePage().viewCartFromStorePage();
+    public void i_have_product_in_the_cart(String productName) {
+        context.getStorePage().addProductToCart(productName);
     }
 
-    @When("I remove product from the cart")
-    public void i_remove_product_from_the_cart() {
+    @When("I remove the product from the cart")
+    public void i_remove_the_product_from_the_cart() {
+        context.getStorePage().viewCartFromStorePage();
         context.getCartPage().removeProductFromCart();
     }
 
-
     @Then("the product should be successfully removed")
     public void the_product_should_be_successfully_removed() {
-        int cartQuantity = context.getCartPage().getProductQuantityAfterRemove();
-        Assert.assertEquals(cartQuantity, 0);
+        int qnty = context.getCartPage().getProductQuantityAfterRemove();
+        Assert.assertEquals(qnty,0);
     }
 
-    @Then("I should see success alert message containing removed {string}")
-    public void i_should_see_success_alert_message(String productName) {
-        String actualAlertMessage = context.getCartPage().getProductRemovalSuccessAlert(productName);
-        Assert.assertTrue(actualAlertMessage.contains("“" + productName + "” removed"));
+
+    @Then("I should see a success alert message containing {string}")
+    public void i_should_see_a_success_alert_message_containing(String productName) {
+        String successAlert = context.getCartPage().getProductRemovalSuccessAlert(productName);
+        Assert.assertTrue(successAlert.contains("“" + productName + "”" +" removed"));
+
     }
 
 }

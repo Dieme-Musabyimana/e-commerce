@@ -13,8 +13,8 @@ Feature: Remove product from the cart
     Scenario Outline: Remove product from the cart as a guest user
       And I have product "<product_name>" in the cart
       When I remove the product from the cart
+       Then I should see a success alert message containing "<product_name>"
       Then the product should be successfully removed
-      And I should see a success alert message containing "<product_name>"
 
       Examples:
         | product_name                    |
@@ -30,8 +30,9 @@ Feature: Remove product from the cart
     Scenario Outline: Remove product from the cart as a logged-in user
       And I have product "<product_name>" in the cart
       When I remove the product from the cart
-      Then the product should be successfully removed
-      And I should see a success alert message containing "<product_name>"
+
+      Then I should see a success alert message containing "<product_name>"
+      And the product should be successfully removed
 
       Examples:
         | product_name                    |
