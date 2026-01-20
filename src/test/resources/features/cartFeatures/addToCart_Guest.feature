@@ -1,4 +1,7 @@
 Feature: Add products to cart as a Guest User
+  As a guest shopper
+  I want to add products to my shopping cart
+  So that I can review selected items before checkout
 
   @cartManagement
   Scenario Outline: Add a product from Store page to cart as a guest
@@ -9,6 +12,8 @@ Feature: Add products to cart as a Guest User
     Examples:
       | product_name     |
       | Anchor Bracelet  |
+      | Dark Brown Jeans |
+      |Black Over-the-shoulder Handbag|
 
   @cartManagement
   Scenario Outline: Add a product from Product page to cart as a guest
@@ -18,6 +23,8 @@ Feature: Add products to cart as a Guest User
 
     Examples:
       | product_name   |
-      |Black Over-the-shoulder Handbag|
+      |Boho Bangle Bracelet|
+      |Blue Denim Shorts   |
+      |Dark Brown Jeans    |
 
 

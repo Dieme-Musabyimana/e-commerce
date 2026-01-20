@@ -13,7 +13,7 @@ Feature: Login functionality
 
     Examples:
       | username | password |
-      | didy     | Didy1    |
+      | didy     | didy1    |
 
   Scenario Outline: Unsuccessful login with non-existing account
     When I enter credentials "<username>" "<password>"
@@ -31,7 +31,9 @@ Feature: Login functionality
 
     Examples:
       | email        | password | error         |
-      | nana@gmail   | Nana!    | Unknown email address |
+      | nana@gmail   | Nana!    |  is not registered |
+      |              | 123      |  Username is required |
+      |nana          |          |  password field is empty|
 
   Scenario Outline: Unsuccessful login with wrong password
     When I enter credentials "<username>" "<password>"
@@ -40,4 +42,4 @@ Feature: Login functionality
 
     Examples:
       | username | password | error          |
-      | nana     | Nana!12  | is incorrect |
+      | didy     | Nana!12  | is incorrect |

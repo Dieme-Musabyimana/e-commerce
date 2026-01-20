@@ -1,5 +1,9 @@
 Feature: Add products to cart as a Logged-in User
 
+  As a registered customer
+  I want to add products to my shopping cart
+  So that I can review items before checkout
+
   Background:
     Given I am a logged-in user with credentials "didy" and "didy1"
   @cartManagement

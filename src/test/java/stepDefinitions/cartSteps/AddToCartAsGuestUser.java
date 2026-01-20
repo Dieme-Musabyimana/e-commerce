@@ -5,13 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class CartBaseSteps {
+public class AddToCartAsGuestUser {
     private final TestContext context;
-    public CartBaseSteps(TestContext context){
+    public AddToCartAsGuestUser(TestContext context){
         this.context = context;
     }
 

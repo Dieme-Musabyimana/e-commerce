@@ -49,7 +49,7 @@ public class TestContext {
     }
     public CheckOutPage getCheckOutPage(){
         if(checkOutPage == null){
-            homePage = new HomePage(driver);
+            checkOutPage = new CheckOutPage(driver);
         }
         return checkOutPage;
     }

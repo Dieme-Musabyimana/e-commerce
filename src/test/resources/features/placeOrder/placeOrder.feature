@@ -1,16 +1,29 @@
-Feature: Place order
+Feature: Place order functionality
 
-Scenario Outline: Place an order as a guest using payment_method
+  As a customer
+  I want to proceed to checkout
+  so that I can purchase the products
 
-Given I am on the store page
- * I have a product "<product-name>" in the cart
- * I am on the checkout page
- When I enter billing details
-| firstname | lastname | country            | address_line1     | city  | state | zip   | email |
-| didy      | mboka    | <countr          | <address>         | <city>| <state>| <zip> | <email> |
-* I select payment method "<payment_method>"
-* I place the order
-Then the order should be placed successfully
-  Examples:
-  |product-name|
-  |Black Over-the-shoulder Handbag|
+  Scenario Outline: Successful checkout with valid shipping and payment details
+    Given I have product "<product-name>" in my cart
+    And I am on the checkout page
+    When I provide valid shipping details
+      | firstName     | The-User1          |
+      | lastName      | Anitha              |
+      | country       | US             |
+      | streetAddress | st34566            |
+      | town          | China City             |
+      | state         | AL             |
+      | postCode      | 00000               |
+      | phone         | 0788888888         |
+      | email         | user2@gmail.com |
+    And I select
+      | Cash on delivery |
+    And I place the order
+    Then I should see an order confirmation message
+    Examples:
+      |product-name|
+      |Anchor Bracelet|
+
+
+
