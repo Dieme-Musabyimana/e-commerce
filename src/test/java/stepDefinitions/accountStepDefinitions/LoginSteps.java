@@ -12,6 +12,7 @@ public class LoginSteps {
 
     }
 
+// TODO: implement login validation
 
     @When("I enter credentials {string} {string}")
     public void i_enter_credentials(String username, String password) {

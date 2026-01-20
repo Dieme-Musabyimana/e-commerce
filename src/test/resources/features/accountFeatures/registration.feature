@@ -33,7 +33,7 @@ Feature: Registration and Login functionality
 
     Examples:
       | username | email          | password | error                         |
-      | david    | david@gmailcom | David1   | provide a valid email address |
+      | david   | david@gmailcom | David1   | provide a valid email address |
       |          | david@gmail.com | David1   | enter a valid account username|
       | david    |                 | David!   | provide a valid email address                             |
-      |          |                 |          | provide a valid                |
+      |          |                 |          | provide a valid        -u         |
