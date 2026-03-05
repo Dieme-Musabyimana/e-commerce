@@ -9,14 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import pages.base.BasePage;
 
 import java.util.Map;
 
 public class CheckOutPage extends BasePage {
 
-    // 1. Define WebElements using @FindBy
     @FindBy(id = "billing_first_name") private WebElement fNameField;
     @FindBy(id = "billing_last_name") private WebElement lNameField;
     @FindBy(id = "billing_country") private WebElement countryDropdown;
